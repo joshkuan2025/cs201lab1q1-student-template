@@ -20,6 +20,80 @@ public class NumbersArray {
     }
 
     // Write your methods here
-    
+    public static int findMax(Integer[] input) {
+        int max = input[0];
+        
+        for (int i = 1; i < input.length; i++) {
+            if (max < input[i]) {
+                max = input[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static int[] findDuplicates(Integer[] input) {
+        int[] arr = new int[input.length * 2];
+        
+        for (int i = 0; i < input.length; i++) {
+            int num = input[i];
+            
+            int indx = 0;
+            while (arr[indx] != 0 && arr[indx] != num) {
+                indx += 2;
+            }
+            arr[indx] = num;
+            arr[indx + 1]++;
+        }
+
+        int size = 0;
+        for (int i = 1; i < arr.length; i += 2) {
+            if (arr[i] > 1) {
+                size++;
+            }
+        }
+
+        int[] output = new int[size];
+        int indx = 0;
+        for (int i = 0; i < arr.length; i += 2) {
+            if (arr[i + 1] > 1) {
+                output[indx++] = arr[i]; 
+            }
+        }
+
+        return output;
+    }
+
+    public static int[] findUnique(Integer[] input) {
+        int[] arr = new int[input.length * 2];
+        
+        for (int i = 0; i < input.length; i++) {
+            int num = input[i];
+            
+            int indx = 0;
+            while (arr[indx] != 0 && arr[indx] != num) {
+                indx += 2;
+            }
+            arr[indx] = num;
+            arr[indx + 1]++;
+        }
+
+        int size = 0;
+        for (int i = 1; i < arr.length; i += 2) {
+            if (arr[i] == 1) {
+                size++;
+            }
+        }
+
+        int[] output = new int[size];
+        int indx = 0;
+        for (int i = 0; i < arr.length; i += 2) {
+            if (arr[i + 1] == 1) {
+                output[indx++] = arr[i]; 
+            }
+        }
+
+        return output;
+    }
 }
 
