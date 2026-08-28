@@ -21,6 +21,10 @@ public class NumbersArray {
 
     // Write your methods here
     public static int findMax(Integer[] input) {
+        if (input.length == 0) {
+            return 0;
+        }
+
         int max = input[0];
         
         for (int i = 1; i < input.length; i++) {
@@ -33,6 +37,10 @@ public class NumbersArray {
     }
 
     public static int[] findDuplicates(Integer[] input) {
+        if (input.length == 0) {
+            return null;
+        }
+        
         int[] arr = new int[input.length * 2];
         
         for (int i = 0; i < input.length; i++) {
@@ -65,6 +73,10 @@ public class NumbersArray {
     }
 
     public static int[] findUnique(Integer[] input) {
+        if (input.length == 0) {
+            return null;
+        }
+
         int[] arr = new int[input.length * 2];
         
         for (int i = 0; i < input.length; i++) {
