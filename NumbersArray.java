@@ -36,11 +36,11 @@ public class NumbersArray {
         return max;
     }
 
-    public static int[] findDuplicates(Integer[] input) {
+    public static Integer[] findDuplicates(Integer[] input) {
         if (input.length == 0) {
             return null;
         }
-        
+
         int[] arr = new int[input.length * 2];
         
         for (int i = 0; i < input.length; i++) {
@@ -61,7 +61,7 @@ public class NumbersArray {
             }
         }
 
-        int[] output = new int[size];
+        Integer[] output = new Integer[size];
         int indx = 0;
         for (int i = 0; i < arr.length; i += 2) {
             if (arr[i + 1] > 1) {
@@ -72,7 +72,7 @@ public class NumbersArray {
         return output;
     }
 
-    public static int[] findUnique(Integer[] input) {
+    public static Integer[] findUnique(Integer[] input) {
         if (input.length == 0) {
             return null;
         }
@@ -97,7 +97,7 @@ public class NumbersArray {
             }
         }
 
-        int[] output = new int[size];
+        Integer[] output = new Integer[size];
         int indx = 0;
         for (int i = 0; i < arr.length; i += 2) {
             if (arr[i + 1] == 1) {
